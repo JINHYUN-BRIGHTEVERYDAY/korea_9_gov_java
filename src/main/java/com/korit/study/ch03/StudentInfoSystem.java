@@ -6,6 +6,8 @@ public class StudentInfoSystem {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        System.out.println("=== 학생 정보 입력하기 ====");
+
         System.out.print("학생 이름: ");
         String name = scanner.next();
 
