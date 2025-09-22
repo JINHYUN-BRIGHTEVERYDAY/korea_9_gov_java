@@ -45,15 +45,33 @@ public class StudentInfoSystem {
         System.out.println("    영어: " + English_Score + "점");
         System.out.println("    수학: " + Math_Score + "점");
 
-        double averageScore = (Korean_Score + English_Score + Math_Score)/3;
-        String scoreGrade = averageScore >=90 ? "A" :
-                averageScore >=80 ? "B" :
-                        averageScore >=70 ? "C" :
-                                averageScore >=60 ? "D" :
-                                        "F";
+        // double totalScore = Korean_Score + English_Score + Math_Score;
+        // double averageScore = totalScore / 3;
 
-        System.out.println("평균: " + (double)((Korean_Score + English_Score + Math_Score)/3) + "점" + " (학점: " + scoreGrade + ")");
+//        String scoreGrade = averageScore >=90 ? "A" :
+//                averageScore >=80 ? "B" :
+//                        averageScore >=70 ? "C" :
+//                                averageScore >=60 ? "D" :
+//                                        "F";
+
+        double averageScore = (Korean_Score + English_Score + Math_Score)/3;
+
+        String scoreGrade = averageScore >= 95? "A+" :
+                averageScore >= 90? "A" :
+                        averageScore >= 85? "B+" :
+                                averageScore >= 85? "B" :
+                                        averageScore >= 80? "C+" :
+                                                averageScore >= 75? "C" :
+                                                        averageScore >= 70? "D+" :
+                                                                averageScore >= 65? "D" : "F";
+
+        System.out.println("평균: "
+                + (double)((Korean_Score + English_Score + Math_Score)/3) + "점"
+                + " (학점: " + scoreGrade + ")");
 
         System.out.println("자기소개: " + "안녕하세요! 저는 " + sport + "를 좋아하는 " + name + " 입니다.");
+        //String.format 이용하여 출력 가능
+
+        // %s, %d, %.2f...
     }
 }
