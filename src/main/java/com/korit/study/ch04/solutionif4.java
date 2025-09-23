@@ -1,4 +1,4 @@
-package com.korit.study.ch03;
+package com.korit.study.ch04;
 
 import java.util.Scanner;
 

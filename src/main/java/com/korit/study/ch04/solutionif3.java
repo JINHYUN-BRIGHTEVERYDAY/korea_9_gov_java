@@ -1,7 +1,6 @@
-package com.korit.study.ch03;
+package com.korit.study.ch04;
 
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 /*

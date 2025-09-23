@@ -1,7 +1,7 @@
-package com.korit.study.ch03;
-
+package com.korit.study.ch04;
 
 import java.util.Scanner;
+
 
 // 정수 1개를 입력받아서 그 수가 50이상의 수인지 50미만의 수인지 판별하라
 public class solutionif1 {
