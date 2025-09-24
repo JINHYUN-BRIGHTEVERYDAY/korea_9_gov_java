@@ -1,4 +1,4 @@
-package com.korit.study;
+package com.korit.study.ch05;
 
 public class Array01 {
     public static void main(String[] args) {
