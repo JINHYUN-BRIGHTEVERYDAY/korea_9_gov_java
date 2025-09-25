@@ -1,7 +1,8 @@
 package com.korit.study.ch06;
 
 /*
-Copy// 섭씨를 화씨로 변환하는 함수
+
+// 섭씨를 화씨로 변환하는 함수
 public static double celsiusToFahrenheit(double celsius) {
     return celsius * 9 / 5 + 32;
 }
@@ -17,11 +18,12 @@ public static void checkTemperatureConversion(double celsius) {
     // 여기에 중첩 함수 호출 코드 작성
 }
 
-* */
+*/
+
 
 public class 중첩함수연습문제1 {
     public static void main(String[] args) {
-        checkTemperatureConversion(29);
+        checkTemperatureConversion(38.5);
     }
 
 
@@ -41,9 +43,7 @@ public class 중첩함수연습문제1 {
 //            celsiusToFahrenheit(celsius);
 //            fahrenheitToCelsius(celsius * 9 /5 + 32);
 
-        System.out.println((int) (fahrenheitToCelsius(celsiusToFahrenheit(celsius))));
+        System.out.println((double)(fahrenheitToCelsius(celsiusToFahrenheit(celsius))));
     }
-
-
 
 }

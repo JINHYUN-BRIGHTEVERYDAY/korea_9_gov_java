@@ -40,5 +40,21 @@ public class Array01 {
         for (int i = 0; i < 3; i++) {
             System.out.println("이름: " + names[i]);
         }
+
+        // for-each문 (자바)
+        // 순회한다
+//        for (int i : nums) {
+//            System.out.println(i);
+//        }
+
+        // for-each문 (자바)
+        for (int num  : new int[] {1,2,3,4}) {
+            System.out.println(num);
+        }
+
+        /* 파이썬
+        * for i in [1,2,3,4]:
+            print(i)*/
+
     }
 }
