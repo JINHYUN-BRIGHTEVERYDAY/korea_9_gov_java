@@ -2,7 +2,6 @@ package com.korit.study.ch06;
 
 /*
 
-
 계산기 함수
 
 public static int add(int a, int b) { return a + b; }

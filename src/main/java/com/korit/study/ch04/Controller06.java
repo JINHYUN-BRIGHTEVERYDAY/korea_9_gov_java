@@ -17,5 +17,7 @@ public class Controller06 {
             }
             System.out.println("----------------");
         }
+
+        // 구구단
     }
 }

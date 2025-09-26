@@ -14,12 +14,12 @@ public class Star {
 
         System.out.println("별 찍기");
 
-        for (int i = 0; i < 5; i++) {
-            System.out.println("");
-            for (int j = 0; j < ; j++) {
-
-            }
-        }
+//        for (int i = 0; i < 5; i++) {
+//            System.out.println("");
+//            for (int j = 0; j < ; j++) {
+//
+//            }
+//        }
 
 //        System.out.println("==별 찍기 2==");
 

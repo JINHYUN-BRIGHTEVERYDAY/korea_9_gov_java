@@ -1,6 +1,7 @@
 package com.korit.study.ch06;
 
 /*
+
 class GradeSystem {
     // 평균을 계산하는 함수 (정수 2개)
     public static double average(int score1, int score2) {
