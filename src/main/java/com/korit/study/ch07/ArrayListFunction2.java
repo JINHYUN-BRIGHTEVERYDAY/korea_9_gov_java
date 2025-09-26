@@ -1,5 +1,6 @@
 package com.korit.study.ch07;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class ArrayListFunction2 {
@@ -44,7 +45,41 @@ public class ArrayListFunction2 {
         return nums;
     }
 
+    public static void printArray(int[] array) {
+        System.out.print("[ ");
+        for (int num : array) {
+            System.out.print(num + " ");
+        }
+        System.out.println("]");
+    }
+
     public static void main(String[] args) {
+        Random random = new Random();
+        int[] 당첨번호 = new int[7];
+//        int 보너스번호 = random.nextInt(45) + 1;
+        for (int i = 0; i < 당첨번호.length; i++) {
+            while(true) {
+                int 새로운랜덤번호 = random.nextInt(45) + 1;
+                boolean isFind = false;
+                for (int j = 0; j < 당첨번호.length; j++) {
+                    if(당첨번호[j] == 새로운랜덤번호) {
+                        isFind = true;
+                        break;
+                    }
+                }
+                if (!isFind) {
+                    당첨번호[i] = 새로운랜덤번호;
+                    break;
+                }
+            }
+        }
+
+        for (int i = 0; i < 당첨번호.length; i++) {
+            System.out.println(당첨번호[i]);
+        }
+
+//        System.out.println(random.nextInt(45) + 1);
+
         /*
         * 복권번호 6자리 입력하기
         * */
@@ -98,9 +133,39 @@ public class ArrayListFunction2 {
         }
 
 
-//        String[] number = new String[0];
+        String[] number = new String[0];
+
+//        int[] nums = new int[0];
+//        nums = inputNums();
+
+        printArray(당첨번호);
+        printArray(nums);
 
 
-
+        int 당첨개수 = 0;
+        boolean 보너스당첨 = false;
+        for (int i = 0; i < 당첨번호.length; i++) {
+            for (int j = 0; j < nums.length; j++) {
+                if(nums[j] == 당첨번호[j] && i < nums.length - 1) {
+                    당첨개수++;
+                } else if (nums[j] == 당첨번호[i]) {
+                    보너스당첨 = true;
+                }
+            }
+        }
+        if (당첨개수 == 6) {
+            System.out.println("1등");
+        } else if (당첨개수 == 5 && 보너스당첨) {
+            System.out.println("2등");
+        } else if (당첨개수 == 5) {
+            System.out.println("3등");
+        } else if (당첨개수 == 4) {
+            System.out.println("4등");
+        } else if (당첨개수 == 3) {
+            System.out.println("5등");
+        } else {
+            System.out.println("꽝");
+        }
     }
+
 }
