@@ -63,11 +63,20 @@ public class StudyMain {
 
 
         // 객체 생성
+        // Service 클래스 : 기능 담당
         StudyPrintService studyPrintService = new StudyPrintService();
         studyPrintService.printInfoAll(study);
 
+        System.out.println("====================================");
+        studyPrintService.printInfoSubject(study.subject);
+        System.out.println("====================================");
+        studyPrintService.printInfoTeacher(study.subject.teacher);
+        System.out.println("====================================");
+        studyPrintService.printInfoStudent(study.students[0]);
 
-        System.out.println("--------------------------");
+
+
+        System.out.println("-------------------------------");
 
         // 출력하기
         System.out.println("과목명 : " + study.subject.name);
