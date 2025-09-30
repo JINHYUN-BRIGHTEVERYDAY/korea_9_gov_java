@@ -62,6 +62,13 @@ public class StudyMain {
         Study study = new Study(subject, students);
 
 
+        // 객체 생성
+        StudyPrintService studyPrintService = new StudyPrintService();
+        studyPrintService.printInfoAll(study);
+
+
+        System.out.println("--------------------------");
+
         // 출력하기
         System.out.println("과목명 : " + study.subject.name);
         System.out.println("담당 선생님 이름: " + study.subject.teacher.name);
