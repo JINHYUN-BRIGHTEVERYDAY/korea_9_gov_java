@@ -18,7 +18,13 @@ public class ClassAMain {
         System.out.println(c.name);
         System.out.println(c.age);
 
-    }
+        ClassC c2 = new ClassC("진현", 30, "김해");
+        System.out.println(c2.name);
+        System.out.println(c2.age);
+        System.out.println(c2.address);
 
+        ClassC c3 = new ClassC();
+
+    }
 
 }
