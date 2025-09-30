@@ -25,6 +25,9 @@ public class Student {
     // 학생3의 ID: 20250003
     // 학생3의 이름: 양재원
     // 학생3의 나이: 27
+`
+
+
 
     // 생성자
     public Student(int id, String name, int age) {
