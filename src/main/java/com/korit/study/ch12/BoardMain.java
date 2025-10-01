@@ -1,11 +1,11 @@
 package com.korit.study.ch12;
 
-
 public class BoardMain {
     public static void main(String[] args) {
 
 
         /*
+
 
         Board 배열 - board 배열 -> 게시글 2개
         Board - id (정수), title(문자열), contents(문자열), writer(Writer), comments(Comment[])
@@ -24,12 +24,21 @@ public class BoardMain {
 
 
 
+
+
+
         // 2. Writer 3명 생성
         // 작가에 대한 객체 생성
 
         Writer writer1 = new Writer(1, "김초엽");
         Writer writer2 = new Writer(2, "김주혜");
         Writer writer3 = new Writer(3, "레프톨스토이");
+
+//        Writer[] writers = new Writer[3];
+//        writers[0] = new Writer(1, "김초엽");
+//        writers[1] = new Writer(2, "김주혜");
+//        writers[2] = new Writer(3, "레프톨스토이");
+
 
 
 
@@ -47,6 +56,8 @@ public class BoardMain {
 
 
 
+
+
         // comments에 대한 배열 생성
 
         Comment[] comments = new Comment[] {commentA, commentB, commentC, commentD};
@@ -54,6 +65,13 @@ public class BoardMain {
         comments[1] = commentB;
         comments[2] = commentC;
         comments[3] = commentD;
+
+
+
+
+
+
+
 
 
 
@@ -71,18 +89,28 @@ public class BoardMain {
         Board[] boards = new Board[] {board1, board2};
 
 
+
+
+
         // board1에 대한 정보 출력하기
         System.out.println("작성자 아이디는: " + boards[0].boardid);
         System.out.println("작성자 게시글의 제목은: " + boards[0].boardtitle);
         System.out.println("작성자 게시글의 내용은: " + boards[0].contents);
         System.out.println("작가의 아이디는: " + boards[0].writer.id);
         System.out.println("작가의 이름은: " + boards[0].writer.writername);
-//        System.out.println("작성자의 게시글 코멘트 아이디는: " + boards[0].comment[0].id);
-//        System.out.println("작성자의 게시글 코멘트 내용은: " + boards[0].comment[0].content);
-//        System.out.println("작성자의 게시글 코멘트 내용은: " + boards[0].comment[0].content);
+        System.out.println("작성자의 게시글 코멘트 아이디는: " + boards[0].comment[0].id);
+        System.out.println("작성자의 게시글 코멘트 내용은: " + boards[0].comment[0].content);
+        System.out.println("작성자의 게시글 코멘트에 대한 작가의 아이디는: " + boards[0].comment[0].writer.id);
+        System.out.println("작성자의 게시글 코멘트에 대한 작가의 이름은: " + boards[0].comment[0].writer.writername);
+
+
+
 
 
         System.out.println("----------------------------------------------------");
+
+
+
 
 
         // board2에 대한 정보 출력하기
@@ -91,8 +119,17 @@ public class BoardMain {
         System.out.println("작성자 게시글의 내용은: " + boards[1].contents);
         System.out.println("작가의 아이디는: " + boards[1].writer.id);
         System.out.println("작가의 이름은: " + boards[1].writer.writername);
+        System.out.println("작성자의 게시글 코멘트 아이디는: " + boards[1].comment[1].id);
+        System.out.println("작성자의 게시글 코멘트 내용은: " + boards[1].comment[1].content);
+        System.out.println("작성자의 게시글 코멘트에 대한 작가의 아이디는: " + boards[1].comment[1].writer.id);
+        System.out.println("작성자의 게시글 코멘트에 대한 작가의 이름은: " + boards[1].comment[1].writer.writername);
 
 
+        /*
+        * BoardPrintService boardPrintService = new BoardPrintService();
+        * boardPrintService.printAll(boards);
+        *
+        * */
 
     }
 }
