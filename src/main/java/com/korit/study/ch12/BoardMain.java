@@ -5,9 +5,7 @@ public class BoardMain {
     public static void main(String[] args) {
 
 
-
         /*
-
 
         Board 배열 - board 배열 -> 게시글 2개
         Board - id (정수), title(문자열), contents(문자열), writer(Writer), comments(Comment[])
@@ -23,8 +21,6 @@ public class BoardMain {
 
 
         */
-
-
 
 
 
@@ -49,10 +45,15 @@ public class BoardMain {
         Comment commentD = new Comment(31, "소설전반", writer3);
 
 
+
+
         // comments에 대한 배열 생성
 
         Comment[] comments = new Comment[] {commentA, commentB, commentC, commentD};
-
+        comments[0] = commentA;
+        comments[1] = commentB;
+        comments[2] = commentC;
+        comments[3] = commentD;
 
 
 
@@ -76,7 +77,9 @@ public class BoardMain {
         System.out.println("작성자 게시글의 내용은: " + boards[0].contents);
         System.out.println("작가의 아이디는: " + boards[0].writer.id);
         System.out.println("작가의 이름은: " + boards[0].writer.writername);
-
+//        System.out.println("작성자의 게시글 코멘트 아이디는: " + boards[0].comment[0].id);
+//        System.out.println("작성자의 게시글 코멘트 내용은: " + boards[0].comment[0].content);
+//        System.out.println("작성자의 게시글 코멘트 내용은: " + boards[0].comment[0].content);
 
 
         System.out.println("----------------------------------------------------");

@@ -8,7 +8,6 @@ public class Writer {
     String writername;
 
 
-
     // Writer에 대한 생성자 만들기
     public Writer(int id, String writername) {
         this.id = id;

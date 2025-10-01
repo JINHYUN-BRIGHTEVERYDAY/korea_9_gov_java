@@ -19,6 +19,14 @@ public class Board {
         this.comment = comment;
     }
 
+//    public Board(int boardid, String boardtitle, Writer writer, String contents, Comment[] comment) {
+//        this.boardid = boardid;
+//        this.boardtitle = boardtitle;
+//        this.writer = writer;
+//        this.contents = contents;
+//        this.comment = comment;
+//    }
+
 
 //    Writer writer1 = new Writer(1, "김초엽");
 //    Writer writer2 = new Writer(2, "김주혜");
