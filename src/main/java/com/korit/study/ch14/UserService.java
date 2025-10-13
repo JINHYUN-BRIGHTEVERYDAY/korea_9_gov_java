@@ -5,10 +5,12 @@ public class UserService {
     UserList userList;
 
     UserService(UserList userList) {
+
         this.userList = userList;
     }
 
     boolean isDuplicatedUsername(String username) {
+
         return userList.findByUsername(username) != null;
     }
 

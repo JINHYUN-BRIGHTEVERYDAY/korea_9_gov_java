@@ -16,7 +16,7 @@ public class TodoListView {
     private UserService userService;
     private TodoService todoService;
 
-    TodoListView(UserService userService, TodoService todoService) {
+    public TodoListView(UserService userService, TodoService todoService) {
         scanner = new Scanner(System.in);
         this.userService = userService;
         this.todoService = todoService;
@@ -118,7 +118,7 @@ public class TodoListView {
                 System.out.println("===<< Todo 등록 완료 >>===");
             } else if ("2".equals(cmd)) {
                 System.out.println(" [Todo 조회] ");
-                todoService.printAllByUserId(principal);
+                todoService.printAllByUser(principal);
             }
         }
     }

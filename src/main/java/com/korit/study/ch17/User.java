@@ -7,12 +7,15 @@ public class User {
     private String password;
     private String[] roles;
 
-
     public User(String username, String password, String[] roles) {
         this.username = username;
         this.password = password;
-        this.password = password;
+        // this.password = password;  <- 제거 또는 주석 처리
+        this.roles = roles; // <-- 🔥 이 부분이 추가되어야 합니다!
     }
+
+    // ... 나머지 메서드는 그대로 ...
+
 
     public String getUsername() {
         return username;

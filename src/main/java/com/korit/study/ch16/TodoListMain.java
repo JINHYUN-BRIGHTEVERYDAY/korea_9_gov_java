@@ -13,9 +13,9 @@ public class TodoListMain {
         UserService userService = new UserService(userList);
         TodoList todoList = new TodoList();
         TodoService todoService = new TodoService(todoList);
-//        TodoListView view = new TodoListView(userService, todoService);
+        TodoListView view = new TodoListView(userService, todoService);
 
-//        view.homeView();
+        view.homeView();
 
 
 
