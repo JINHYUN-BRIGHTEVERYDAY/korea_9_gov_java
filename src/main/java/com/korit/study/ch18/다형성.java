@@ -3,11 +3,33 @@ package com.korit.study.ch18;
 public class 다형성 {
     public static void main(String[] args) {
 
+        // 전원 객체 생성 -> 배열로 생성함
         전원[] 전원들 = new 전원[2];
-        전원들[0] = new 컴퓨터(20); // -> 업캐스팅 해야 함
 
-        전원들[1] = new 조명(10); // -> 업캐스팅 해야 함
+        // 전원에 대한 객체를 컴퓨터로 캐스팅하여
+//        전원들[0] = new 컴퓨터(20); // -> 업캐스팅 해야 함
+//
+//        전원들[1] = new 조명(10); // -> 업캐스팅 해야 함
 
+        /*
+
+        public 컴퓨터(int 전압) {
+            super(전압);
+        }
+
+        public 조명(int 전압) {
+            super(전압);
+        }
+
+        */
+
+        전원들[0] = new 컴퓨터(20);
+        전원들[1] = new 조명(10);
+
+
+
+        // 향상된 for문
+        // 전원[] 전원들 = new 전원[2]; 이므로
 
         for (전원 p : 전원들) {
             p.켠다();
@@ -21,6 +43,8 @@ public class 다형성 {
             System.out.println(((전자기기) p).get전압());
         }
 
+        // 전자기기에 있는 메서드를 사용하기 위함
+        // getter 사용
         // System.out.println(((전자기기) 전원[0]).get전압());
 
 
@@ -31,7 +55,6 @@ public class 다형성 {
 
 
         // 클래스, 오브젝트, 인스턴스
-
         for (전원 p : 전원들) {
             if (p instanceof 컴퓨터) {
                 ((컴퓨터) p).바이오스부팅();
