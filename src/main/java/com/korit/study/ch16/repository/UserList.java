@@ -1,21 +1,27 @@
-package com.korit.study.ch14;
+package com.korit.study.ch16.repository;
+
+import com.korit.study.ch16.entity.User;
 
 public class UserList {
-    User[] users;
+    public User[] users;
 
-    UserList() {
+    public UserList() {
         this.users = new User[0];
     }
 
-    int generateUserId() {
+    public User[] findAll() {
+        return users;
+    }
+
+    public int generateUserId() {
         int newId = 1;
         if (users.length == 0) {
             return newId;
         }
-        return users[users.length - 1].id + 1;
+        return users[users.length - 1].getId() + 1;
     }
 
-    void add(User user) {
+    public void add(User user) {
         User[] temp = new User[users.length + 1];
         for (int i = 0; i < users.length; i++) {
             temp[i] = users[i];
@@ -24,9 +30,11 @@ public class UserList {
         users = temp;
     }
 
-    User findByUsername(String username) {
+
+
+    public User findByUsername(String username) {
         for (User user : users) {
-            if (user.username.equals(username)) {
+            if (user.getUsername().equals(username)) {
                 return user;
             }
         }

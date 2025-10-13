@@ -1,18 +1,34 @@
-package com.korit.study.ch14;
+package com.korit.study.ch16.entity;
 
 import java.time.LocalDateTime;
 
 public class Todo {
-    int id;
-    String contents;
-    User user;
-    LocalDateTime createdAt;
+    private int id;
+    private String contents;
+    private User user;
+    private LocalDateTime createdAt;
 
     public Todo(int id, String contents, User user, LocalDateTime createdAt) {
         this.id = id;
         this.contents = contents;
         this.user = user;
         this.createdAt = createdAt;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Override

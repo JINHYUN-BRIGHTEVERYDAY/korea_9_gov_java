@@ -1,16 +1,20 @@
-package com.korit.study.ch14;
+package com.korit.study.ch16.view;
 
-import com.korit.study.ch01.Print01;
+import com.korit.study.ch16.dto.SigninDto;
+import com.korit.study.ch16.dto.SignupDto;
+import com.korit.study.ch16.dto.TodoRegisterDto;
+import com.korit.study.ch16.entity.User;
+import com.korit.study.ch16.service.TodoService;
+import com.korit.study.ch16.service.UserService;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class TodoListView {
 
-    Scanner scanner;
-    User principal;
-    UserService userService;
-    TodoService todoService;
+    private Scanner scanner;
+    private User principal;
+    private UserService userService;
+    private TodoService todoService;
 
     TodoListView(UserService userService, TodoService todoService) {
         scanner = new Scanner(System.in);
@@ -18,7 +22,7 @@ public class TodoListView {
         this.todoService = todoService;
     }
 
-    void homeView() {
+    public void homeView() {
         while (true) {
             System.out.println("[ TodoList ]");
             System.out.println("1. TodoList");

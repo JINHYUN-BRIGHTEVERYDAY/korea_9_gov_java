@@ -1,14 +1,11 @@
 package com.korit.study.ch14;
 
-
 public class SignupDto {
     String username;
     String password;
     String name;
 
-    SignupDto signupDto = new SignupDto(username, password, name);
-
-    SignupDto(String username, String password, String name) {
+    public SignupDto(String username, String password, String name) {
         this.username = username;
         this.password = password;
         this.name = name;
