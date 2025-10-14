@@ -1,6 +1,5 @@
 package com.korit.study.ch17;
 
-import java.util.Arrays;
 
 public class PrincipalAuthentication extends AbstractAuthentication {
 
