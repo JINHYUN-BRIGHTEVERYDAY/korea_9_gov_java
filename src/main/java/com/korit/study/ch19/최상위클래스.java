@@ -16,6 +16,9 @@ public class 최상위클래스 {
 
         Car car = new Car("k3", "화이트"); // Car 객체 생성
         Car car2 = new Car("k3", "화이트");
+        System.out.println(car.equals(car2));
+
+
         Object g = (Object) car;
 
         // car의 자료형은 Car, 따라서 String과 자료형이 일치하지 않는다
@@ -29,13 +32,14 @@ public class 최상위클래스 {
         System.out.println(h);
 
 
+        // 주소값을 비교
         String name1 = "김준일";
         String name2 = "김준일";
         boolean result1 = name1 == name2;
         System.out.println(result1);
 
-        // 클래스이므로 생성 가능 - 매개변수 전달 가능
-        String name3 = new String("김준일");
+        // 클래스이므로 객체를 생성하는 것이 가능해진다 - 매개변수 전달 가능
+        String name3 = new String("김준일"); // 새로운 주소
         System.out.println(name3 + "입니다.");
 
         Scanner scanner = new Scanner(System.in);
@@ -43,7 +47,7 @@ public class 최상위클래스 {
         System.out.println(name4);
 
         // 주소값 비교
-//        boolean result2 = name1 == name3;
+//        boolean result2 = name1 == name3; -> 주소값이 달라서 false
 //        System.out.println(result2);
 
         // 문자열 비교할 때 equals 쓰기
