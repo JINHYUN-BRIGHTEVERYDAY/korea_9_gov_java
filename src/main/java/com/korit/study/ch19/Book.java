@@ -3,14 +3,14 @@ package com.korit.study.ch19;
 import java.util.Objects;
 
 // public class Car extends Object
-public class Car {
+public class Book {
     // Car클래스의 멤버변수
     private String model;
     private String color;
 
 
     // Car클래스 생성자
-    public Car(String model, String color) {
+    public Book(String model, String color) {
         this.model = model;
         this.color = color;
     }
@@ -43,10 +43,10 @@ public class Car {
 @Override
 public boolean equals(Object o) {
 
-    if (!(o.getClass() != Car.class)) {
+    if (!(o.getClass() != Book.class)) {
         return false;
     }
-    Car car = (Car) o;
+    Book car = (Book) o;
 
     return Objects.equals(model, car.model) && Objects.equals(color, car.color);
 

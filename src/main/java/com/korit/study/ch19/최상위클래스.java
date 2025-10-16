@@ -16,9 +16,14 @@ public class 최상위클래스 {
 
         Car car = new Car("k3", "화이트"); // Car 객체 생성
         Car car2 = new Car("k3", "화이트");
+
+
+        Book book = new Book("k3", "화이트");
+        System.out.println(car.equals(book));
+        System.out.println(car.hashCode() == book.hashCode());
+
+
         System.out.println(car.equals(car2));
-
-
         Object g = (Object) car;
 
         // car의 자료형은 Car, 따라서 String과 자료형이 일치하지 않는다
