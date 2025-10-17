@@ -6,11 +6,15 @@ public class PasswordEncoder {
 
     private static final String secrete = "암호화비밀번호";
 
+    // 문자열을 받아서 암호화하는 메서드
     public static String encode(String str) {
         if (Objects.isNull(str)) {
             return null;
         }
+        //문자열을 받아서 해시코드를 Long 타입으로 변환
         long hash = Integer.toUnsignedLong(Objects.hash(str)); //  Long을 16진수로 변환
+
+        // 암호화된 해시코드 -> Long 타입에서 16진수로 변환하기
         long encodedHash = hash + Objects.hash(secrete);
         return Long.toHexString(encodedHash);
     }
@@ -22,11 +26,10 @@ public class PasswordEncoder {
 //    }
 
 
-
     // 암호화된 것과 동일한지 검증하기
     // 여기서 암호문은 이미 암호처리가 완료된 것
     public static boolean match(String 평문, String 암호문) {
-        //        String 암호문 = this.encode(평문);
+        //        String 암호문 = this.encode(평문); -> 근데 static이라서 불가능
 //        return 암호문.equals(평문);
 
 
@@ -34,6 +37,7 @@ public class PasswordEncoder {
         if (Objects.isNull(평문) || Objects.isNull(암호문)) {
             return false;
         }
+        // 평문과 암호문이 같은지를 출력
         return encode(평문).equals(암호문);
     }
 

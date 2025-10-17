@@ -56,6 +56,7 @@ public class SignupService {
     // 회원가입 메서드
     public void signup(SignupDto signupDto) {
         User newUser = new User(0, signupDto.getUsername(), PasswordEncoder.encode(signupDto.getPassword())); // 새로운 User 객체 생성
-
+        userRepository.insert(signupDto.toUser());
     }
+
 }

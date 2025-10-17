@@ -1,6 +1,7 @@
 package com.korit.study.ch22;
 
 import com.korit.study.ch22.dto.SignupDto;
+import com.korit.study.ch22.repository.UserRepository;
 import com.korit.study.ch22.service.SignupService;
 
 import java.util.Scanner;
@@ -66,14 +67,22 @@ public class SignupMain {
                     System.out.println("비밀번호가 일치하지 않습니다. 다시 입력하세요");
                 }
 
+                signupService.signup(signupDto);
+                System.out.println("<< 회원가입이 완료되었습니다 >>");
+
 
             } else if ("2".equalsIgnoreCase(selectedMenu)) {
                 System.out.println("[ 로그인 ]");
                 System.out.print("사용자이름 : ");
                 System.out.print("비밀번호 : ");
 
+                // SigninDto를 생성하여 로그인 정보를 입력받음(공백확인)
+                // 유효성 검사 완료 후 signin() 호출
+
+
             } else if ("3".equalsIgnoreCase(selectedMenu)) {
                 System.out.println("[ 가입된 회원 전체 조회하기 ]");
+                System.out.println(UserRepository.getInstance().toString());
             }
         }
         System.out.println("프로그램 종료 완료");

@@ -26,6 +26,20 @@ public class User {
         return password;
     }
 
+
+    // Setter
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     // toString
     @Override
     public String toString() {
