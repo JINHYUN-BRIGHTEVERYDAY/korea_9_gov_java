@@ -37,6 +37,10 @@ public class UserRepository {
         }
         return null;
     }
+
+    private int generateId() {
+        return users[users.length].getId() + 1;
+    }
 }
 
 

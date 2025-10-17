@@ -1,8 +1,10 @@
 package com.korit.study.ch22.service;
 
 
+import com.korit.study.ch22.dto.SignupDto;
 import com.korit.study.ch22.entity.User;
 import com.korit.study.ch22.repository.UserRepository;
+import com.korit.study.ch22.util.PasswordEncoder;
 
 import java.util.Objects;
 
@@ -14,6 +16,7 @@ public class SignupService {
 
     // SignupService의 생성자 생성하는데 매개변수를 UserRepository로 받음
     private SignupService(UserRepository userRepository) {
+
         this.userRepository = userRepository;
     }
 
@@ -48,5 +51,11 @@ public class SignupService {
             return false;
         }
         return password.equals(confirmPassword);
+    }
+
+    // 회원가입 메서드
+    public void signup(SignupDto signupDto) {
+        User newUser = new User(0, signupDto.getUsername(), PasswordEncoder.encode(signupDto.getPassword())); // 새로운 User 객체 생성
+
     }
 }

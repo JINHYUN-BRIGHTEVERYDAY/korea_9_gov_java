@@ -45,6 +45,8 @@ public class SignupMain {
                     }
                     System.out.println("이미 사용중인 사용자이름입니다.");
                 }
+
+                // 비밀번호 입력
                 while(true) {
                     System.out.print("비밀번호 : ");
                     signupDto.setPassword(scanner.nextLine());
@@ -53,8 +55,16 @@ public class SignupMain {
                     }
                     System.out.println("비밀번호는 공백일 수 없습니다. 비밀번호를 다시 입력해주세요");
                 }
-                System.out.print("비밀번호확인 : ");
-                signupDto.setConfirmPassword(scanner.nextLine());
+
+                // 비밀번호 확인
+                while(true) {
+                    System.out.print("비밀번호확인: ");
+                    signupDto.setConfirmPassword(scanner.nextLine());
+                    if (signupService.isValidConfirmPassword(signupDto.getPassword(), signupDto.getConfirmPassword())) {
+                        break;
+                    }
+                    System.out.println("비밀번호가 일치하지 않습니다. 다시 입력하세요");
+                }
 
 
             } else if ("2".equalsIgnoreCase(selectedMenu)) {
