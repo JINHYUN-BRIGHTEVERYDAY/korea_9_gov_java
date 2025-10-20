@@ -14,7 +14,7 @@ public class UserList {
 
 
     // UserList 생성하는 생성자
-    public UserList(User[] users) {
+    public UserList() {
         // this.users = users;
         this.users = new User[0];
     }

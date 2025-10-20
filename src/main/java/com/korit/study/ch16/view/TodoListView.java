@@ -110,7 +110,7 @@ public class TodoListView {
             if ("b".equals(cmd)) {
                 break;
             } else if ("1".equals(cmd)) {
-                System.out.println("[ Todo 등록 ]");
+                System.out.println();
                 System.out.print("오늘 할 일 >> ");
                 String contents = scanner.nextLine();
                 TodoRegisterDto todoRegisterDto = new TodoRegisterDto(contents, principal);

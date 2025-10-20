@@ -10,6 +10,7 @@ public class 조명 extends 전자기기 {
     // 그러나 전자기기는 추상메서드였으므로 전자기기의 추상메서드를 반드시 정의해야 함
     // 정의되지 않았던 전압 메서드를 호출하여 재정의한다
     public 조명(int 전압) {
+
         super(전압);
     }
 
@@ -29,6 +30,7 @@ public class 조명 extends 전자기기 {
 
     // 조명 자체에만 있는 메서드
     public void 조명교체필요() {
+
         System.out.println("조명 교체가 필요합니다.");
     }
 }

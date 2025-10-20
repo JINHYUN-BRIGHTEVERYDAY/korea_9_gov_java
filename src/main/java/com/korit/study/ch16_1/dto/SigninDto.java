@@ -1,6 +1,5 @@
 package com.korit.study.ch16_1.dto;
 
-import com.korit.study.ch16_1.entity.User;
 
 public class SigninDto {
     private String username;
