@@ -9,14 +9,13 @@ import com.korit.study.ch22.util.PasswordEncoder;
 import java.util.Objects;
 
 public class SignupService {
-    // 1. instance static 변수 정의
+    // 1. instance static 변수 정의 -> 전역변수
     private static SignupService instance;
     private UserRepository userRepository;
 
 
     // SignupService의 생성자 생성하는데 매개변수를 UserRepository로 받음
     private SignupService(UserRepository userRepository) {
-
         this.userRepository = userRepository;
     }
 
@@ -29,15 +28,15 @@ public class SignupService {
         return instance;
     }
 
-    // validDuplicatedUsername 사용하여 Username 검사하기
     public boolean isValidDuplicatedUsername(String username) {
         User foundUser = userRepository.findByUsername(username);
-        // 중복되지 않음  -> 유효함
         if (Objects.isNull(foundUser)) {
             return true;
         }
         return false;
     }
+
+
 
     public boolean isValidPassword(String password) {
         // isEmpty.trim = isBlank

@@ -11,7 +11,7 @@ public class UserRepository {
 
     // static 사용
     private static UserRepository instance;
-    private static UserRepository userRepository;
+//    private static UserRepository userRepository; -> 불필요
 
     // User 클래스에 있는 사용자들 배열로
     private User[] users;
@@ -67,13 +67,19 @@ public class UserRepository {
 //    }
 
     // 로그인을 시도한 사용자의 비밀번호를 확인해야 한다
-    public User confirmLoginUserPassword(String password) {
-        for (User user : users) {
-            if (user.getPassword().equals(password)) {
-                return user;
-            }
-            return null;
-        }
+//    public User confirmLoginUserPassword(String password) {
+//        for (User user : users) {
+//            if (user.getPassword().equals(password)) {
+//                return user;
+//            }
+//            return null;
+//        }
+
+//        private int generateId() {
+//            return users[users.length].getId() + 1;
+//        }
+
+//     -> 전부 다 불필요했음
 
 
         // StringBuilder
@@ -92,7 +98,7 @@ public class UserRepository {
             return stringBuilder.toString();
         }
 
-    }
+
 }
 
 
