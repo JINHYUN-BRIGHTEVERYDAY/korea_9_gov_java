@@ -9,7 +9,6 @@ import java.util.Objects;
 public class UserRepository {
 
     // 멤버변수
-
     // static 사용
     private static UserRepository instance;
 //    private static UserRepository userRepository; -> 불필요

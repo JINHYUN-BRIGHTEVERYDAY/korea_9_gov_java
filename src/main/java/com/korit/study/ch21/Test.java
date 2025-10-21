@@ -1,4 +1,4 @@
-package com.korit.study.ch22.dto;
+package com.korit.study.ch21;
 
 
 class Entity {
