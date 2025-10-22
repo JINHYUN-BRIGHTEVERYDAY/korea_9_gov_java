@@ -22,12 +22,14 @@ public class TodoList {
         // id를 꺼내오는 과정
     }
 
+
+    // getter 메서드
     public Todo[] getTodos() {
         return todos;
     }
 
 
-    // ?
+
     // Todo를 리스트에 추가하기
     public void add(Todo todo) {
         Todo[] temp = new Todo[todos.length + 1];
@@ -38,7 +40,7 @@ public class TodoList {
         todos = temp;
     }
 
-    // ?
+
     // 다건 조회하기
     public Todo[] findAllByUserId(int userId) {
         int foundTodoCounter = 0;
