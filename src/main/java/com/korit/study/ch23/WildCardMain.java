@@ -92,8 +92,6 @@ public class WildCardMain {
 //    }
 
     // 무엇이 들어올지 모른다 -> 와일드카드
-
-
     public void printAll(ArrayList<? extends User> list) {
         // String a = list.get(0); -> 단정지을 수 없다 -> Object 써야
         // ArrayList로 다운캐스팅
@@ -103,7 +101,33 @@ public class WildCardMain {
 
         // 안에 들어있는건 다운캐스팅 해야한다
     }
+
+    /*
+
+    와일드 카드 >>> '?' 기호
+    어떤 타입인지 알 수 없다, 즉, 모든 타입을 유추하여 받을 수 있는 방법
+
+    상한 경계 와일드 카드 : extends >>>  ? extends User
+    -> 최대 업캐스팅 간으한 범위를 User로 하겠다, 즉, 상한선을 정하겠다는 의미
+
+
+    하한 경계 와일드 카드 : super >>> ? super GoldUser
+    -> 해당 객체부터 상위로 모든 범위를 지정하겠다, 즉 Object부터 GoldUser객체까지 하한선을 정하겠다는 의미
+
+
+    */
 }
+
+//    public void printAll(ArrayList<? super GoldUser> list) {
+//        // String a = list.get(0); -> 단정지을 수 없다 -> Object 써야
+//        // ArrayList로 다운캐스팅
+//        for (Object s : list) {
+//            System.out.println(s);
+//        }
+//
+//        // 안에 들어있는건 다운캐스팅 해야한다
+//    }
+
 
 
 //    public void printAll(ArrayList<?> list) {
