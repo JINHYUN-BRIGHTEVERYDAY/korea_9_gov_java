@@ -1,8 +1,6 @@
 package com.korit.study.ch24;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class CollectionMain {
     public static void main(String[] args) {
@@ -131,6 +129,125 @@ public class CollectionMain {
 
 
         */
+
+
+        // Set(집합)
+        Set<String> strSet = new HashSet<>();
+
+        // 값 추가
+        strSet.add("나");
+        strSet.add("다");
+        strSet.add("가");
+        System.out.println(strSet);
+
+
+        String r1 = null;
+        String setSearchValue = "다";
+        // 값 조회하기
+        for(String str: strSet) {
+            if (str.equals("다")) {
+                r1 = str;
+                break;
+            }
+        }
+        System.out.println(r1);
+        if (strSet.contains(setSearchValue)) {
+            r1 = setSearchValue;
+        }
+        System.out.println(r1);
+
+
+        // 값 삭제
+        strSet.remove("나");
+        System.out.println(strSet);
+
+        // 값을 수정하기 -> 삭제하고 추가하기
+        strSet.remove("다");
+        strSet.add("라");
+
+
+        // 리스트를 set으로 바꾸기
+        List<String> a = new ArrayList<>();
+        a.add("가");
+        a.add("가");
+        a.add("나");
+        a.add("나");
+        a.add("다");
+        a.add("라");
+        Set<String> b = new HashSet<>();
+
+        for (String s : a) {
+            b.add(s);
+        }
+        System.out.println(b);
+
+        Set<String> c = new HashSet<>();
+        c.addAll(a);
+        System.out.println(c);
+
+        // 세트 -> 리스트
+        List<String> d = new ArrayList<>();
+        d.addAll(c);
+
+//        d.add(10,"test");
+
+
+
+        // Map(키 + 값 쌍 -> 집합)
+        // Map도 순서가 없다
+        Map<String, String> strMap = new HashMap<>();
+
+        // 값 추가하기
+        strMap.put("a", "김준일");
+        strMap.put("b", "김준이");
+        strMap.put("c", "김준삼");
+        strMap.put("d", "김준사");
+        strMap.put("d", "김준오");
+        // 키값 중복이 될 수 없음 -> 덮어쓰기
+        System.out.println(strMap);
+
+
+        // 값 조회하기
+        String mapValue = strMap.get("c"); // value를 가져오기
+        System.out.println(mapValue);
+        String mapValue2 = strMap.getOrDefault("g", "기본값");
+        System.out.println(mapValue2);
+
+        // 값 수정하기
+        strMap.put("a", "김준육");
+        System.out.println(strMap);
+
+
+        // 값 삭제하기
+        System.out.println(strMap);
+        System.out.println(strMap.remove("a"));
+        System.out.println(strMap.remove("a"));
+        // key값만 일치하면 지워진다
+
+        System.out.println(strMap.remove("b", "김준육"));
+        // value까지 일치해야 지워진다, key값만 일치해서는 지워지지 않는다
+        System.out.println(strMap.remove("b", "김준이"));
+        System.out.println(strMap);
+
+        System.out.println(strMap.entrySet());
+
+
+        // Map을 써서 반복을 돌리기 위해서
+        // Map을 반복 작업하는 방법: Map 자료형을 Entry가 들어있는 Set 자료형으로 형변환
+        for (Map.Entry<String, String> entry : strMap.entrySet()) {
+
+            String key = entry.getKey();
+            String value = entry.getValue();
+
+            System.out.println(key);
+            System.out.println(value);
+        }
+
+        Set<String> valuesSet = new HashSet<>();
+        valuesSet.addAll(strMap.values());
+
+
+
 
     }
 }
