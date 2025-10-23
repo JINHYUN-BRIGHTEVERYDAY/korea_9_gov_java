@@ -74,7 +74,7 @@ public class BoardMain {
         // 출력
         System.out.println(boardList);
 
-
+/// qwer aerh
 
 
     }
