@@ -13,6 +13,9 @@ public class BuilderMain {
         // 필터, 토큰 -> 빌더 패턴으로 접근
 
 
+        // ---------------------------------------------------------
+
+
         // Product.builder()를 호출하여 ProductBuilder 인스턴스를 얻어오기
         Product product = Product.builder()
                 .name("노트북")    // name() 메서드가 ProductBuilder를 반환

@@ -15,7 +15,7 @@ public class Product {
         this.size = size;
     }
 
-    // ⭐ 1. 빌더 객체를 생성하는 정적 메서드 추가
+    // 1. 빌더 객체를 생성하는 정적 메서드 추가
     public static ProductBuilder builder() {
         return new ProductBuilder();
     }
@@ -60,7 +60,7 @@ public class Product {
             return this;
         }
 
-        // ⭐ 4. build() 메서드는 완성된 Product 객체를 반환
+        // 4. build() 메서드는 완성된 Product 객체를 반환
         public Product build() {
             return new Product(this.name, this.price, this.size);
         }
