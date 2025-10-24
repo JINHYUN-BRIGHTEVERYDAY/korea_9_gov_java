@@ -247,10 +247,6 @@ public class CollectionMain {
         valuesSet.addAll(strMap.values());
 
 
-        //qwetagerhawetg
-
-        //wt aerhgaedtga
-
 
     }
 }

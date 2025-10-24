@@ -1,18 +1,23 @@
 package com.korit.study.ch24;
 
+import java.util.Objects;
+
 public class Comment {
-    public String writer;
+    public Writer writer;
     public String content;
 
 
-    // 생성자
-    public Comment(String writer, String content) {
-        this.writer = writer;
-        this.content = content;
+    public Comment() {
     }
 
+     public Comment(Writer writer, String content) {
+        this.writer = writer;
+     }
+
     // getter
-    public String getWriter() {
+
+
+    public Writer getWriter() {
         return writer;
     }
 
@@ -20,14 +25,28 @@ public class Comment {
         return content;
     }
 
+
     // setter
-    public void setWriter(String writer) {
+    public void setWriter(Writer writer) {
         this.writer = writer;
     }
 
     public void setContent(String content) {
         this.content = content;
     }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Comment comment)) return false;
+        return Objects.equals(writer, comment.writer) && Objects.equals(content, comment.content);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(writer, content);
+    }
+
 
 
     // toString

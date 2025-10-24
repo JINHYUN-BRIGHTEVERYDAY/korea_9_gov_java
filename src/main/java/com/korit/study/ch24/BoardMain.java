@@ -74,8 +74,48 @@ public class BoardMain {
         // 출력
         System.out.println(boardList);
 
-/// qwer aerh
-
 
     }
 }
+
+
+/**
+ * [    -> new ArrayList<HashMap<String, Object>>()
+ *      {    -> new HashMap<String, Object>()
+ *          "title": "게시판 제목1",
+ *          "writer": {     -> new HashMap<String, Object>()
+ *              "name": "김준일",
+ *              "age": 32
+ *          },
+ *          "content": "게시판 내용1",
+ *          "comments": [       -> new ArrayList<HashMap<String, String>>()
+ *              {    -> new HashMap<String, String>()
+ *                  "writer": "김준이",
+ *                  "content": "댓글 내용1"
+ *              },
+ *              {    -> new HashMap<String, String>()
+ *                  "writer": "김준삼",
+ *                  "content": "댓글 내용2"
+ *              },
+ *          ]
+ *      },
+ *      {    -> new HashMap<String, Object>()
+ *          "title": "게시판 제목2",
+ *          "writer": {    -> new HashMap<String, Object>()
+ *              "name": "김준사",
+ *              "age": 34
+ *          },
+ *          "content": "게시판 내용2",
+ *          "comments": [       -> new ArrayList<HashMap<String, String>>()
+ *              {    -> new HashMap<String, String>()
+ *                  "writer": "김준오",
+ *                  "content": "댓글 내용11"
+ *              },
+ *              {    -> new HashMap<String, String>()
+ *                  "writer": "김준육",
+ *                  "content": "댓글 내용22"
+ *              },
+ *          ]
+ *      },
+ * ]
+ */

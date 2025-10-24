@@ -7,6 +7,7 @@ package com.korit.study.ch24;
 import com.korit.study.ch12.Board;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Content {
     // 멤버변수
@@ -61,6 +62,16 @@ public class Content {
     }
 
 
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Content content)) return false;
+        return Objects.equals(title, content.title) && Objects.equals(writer, content.writer) && Objects.equals(boardContent, content.boardContent) && Objects.equals(board, content.board);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, writer, boardContent, board);
+    }
 
     // toString
     @Override
@@ -72,6 +83,5 @@ public class Content {
                 '}';
     }
 
-    // qweg aerh
 
 }

@@ -1,33 +1,45 @@
 package com.korit.study.ch24;
 
-public class Writer {
-    public String writer;
-    public int age;
+import java.util.Objects;
 
-    // 생성자
+public class Writer {
+    private String writer;
+    private int age;
+
+
+    public Writer() {
+    }
+
     public Writer(String writer, int age) {
         this.writer = writer;
         this.age = age;
     }
 
-
-    //getter
     public String getWriter() {
         return writer;
+    }
+
+    public void setWriter(String writer) {
+        this.writer = writer;
     }
 
     public int getAge() {
         return age;
     }
 
-
-    //setter
-    public void setWriter(String writer) {
-        this.writer = writer;
-    }
-
     public void setAge(int age) {
         this.age = age;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Writer writer1)) return false;
+        return age == writer1.age && Objects.equals(writer, writer1.writer);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(writer, age);
     }
 
 
@@ -38,6 +50,5 @@ public class Writer {
                 ", age=" + age +
                 '}';
     }
-
 
 }
