@@ -35,5 +35,21 @@ public class BuilderMain {
 
         System.out.println(product2);
         // 출력: Product{name='키보드', price=80000, size='null'}
+
+        // ---------------------------------------------------------
+
+        ComputerBuilder computerBuilder = Computer.builder();
+        computerBuilder.setCpu("i7");
+        computerBuilder.setRam(8);
+        Computer computer = computerBuilder.build();
+
+        ComputerBuilder computerBuilder2 = Computer.builder().cpu("i5").ram(16);
+        Computer computer2 = computerBuilder2.build();
+
+//        ComputerBuilder computerBuilder3 = Computer.builder().cpu("i5").ram(16);
+        Computer computer3 = computerBuilder2.build();
+
+
+//        Computer computer = computerBuilder.build();
     }
 }
