@@ -9,6 +9,7 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
+import java.util.stream.Collectors;
 
 public class LambdaInterface {
     public static void main(String[] args) {
@@ -150,6 +151,25 @@ public class LambdaInterface {
 
         System.out.println(listPredicate.test(userList));
 
+
+
+        // 스트림을 사용하여 조회
+        List<String> names = List.of("김준일", "김준이", "이준일", "이준이");
+        String startedLastname = "이";
+
+        List<String> filteringNames = names.stream()
+                .filter(name -> name.startsWith(startedLastname))
+                .collect(Collectors.toList());
+
+
+        System.out.println(names);
+        System.out.println(filteringNames);
+
+        String foundName = names.stream()
+                .filter(name -> name.equals("김준이"))
+                .collect(Collectors.toList())
+                .getFirst();
+        System.out.println(foundName);
 
     }
 }
