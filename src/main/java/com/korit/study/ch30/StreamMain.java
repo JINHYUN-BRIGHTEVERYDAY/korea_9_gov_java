@@ -96,6 +96,10 @@ public class StreamMain {
                 return n;
             });
 
+            // 2. filter() 분류
+            List<Integer> odds = nums.stream().filter(num -> num % 2 != 0).toList();
+            System.out.println(odds);
+
         }
 
     class StreamMap {
