@@ -5,10 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Predicate;
-import java.util.function.Supplier;
+import java.util.function.*;
 import java.util.stream.Collectors;
 
 public class LambdaInterface {
@@ -88,12 +85,19 @@ public class LambdaInterface {
             System.out.println("숫자 : " + d);
         }).accept(3.14);
 
+        // forEach()
+        List<String> nameList = List.of("김준일", "김준이");
+        nameList.forEach(n -> System.out.println(n));
+        nameList.forEach(System.out :: println); // 람다의 메서드 참조
+
+
 
         // 3. 매개변수 X, 리턴 O
         String str = null;
         Supplier<Boolean> booleanSupplier = () -> Objects.isNull(str);
 
         System.out.println(booleanSupplier.get());
+
 
 
         // 4. 매개변수 O, 리턴 O
@@ -165,11 +169,19 @@ public class LambdaInterface {
         System.out.println(names);
         System.out.println(filteringNames);
 
+
+
         String foundName = names.stream()
                 .filter(name -> name.equals("김준이"))
                 .collect(Collectors.toList())
                 .getFirst();
         System.out.println(foundName);
+
+        // 매개변수 o, 리턴 o 둘의 자료형이 동일하다면
+        UnaryOperator<String> f1 = s -> s + "문자열";
+        Function<String, String> f2 = s -> s + "문자열";
+        BiFunction<String, String, String> f3 = (s1, s2) -> s1 + s2;
+        BinaryOperator<String> f4 = (s1, s2) -> s1 + s2;
 
     }
 }
