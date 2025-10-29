@@ -1,4 +1,4 @@
-package com.korit.study.ch30.mapPractice;
+package com.korit.study.ch30.mapPractice1;
 
 /*
 
