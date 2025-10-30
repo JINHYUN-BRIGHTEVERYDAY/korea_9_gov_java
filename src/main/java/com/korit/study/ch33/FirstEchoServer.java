@@ -21,13 +21,13 @@ public class FirstEchoServer {
             System.out.println("포트번호 : " + socket.getPort());
 
             BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-
             PrintWriter writer = new PrintWriter(socket.getOutputStream());
 
             String message = reader.readLine();
             System.out.println("메시지 내용 : " + message);
 
             writer.println("서버 응답 내용 : " + message);
+            writer.flush();
 
             reader.close();
             writer.close();
