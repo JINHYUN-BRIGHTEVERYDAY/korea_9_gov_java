@@ -10,23 +10,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
-class Client extends Thread{
+class Client extends Thread {
     private Socket socket;
 
     public Client(Socket socket) {
         this.socket = socket;
     }
 
-//    public Socket getSocket() {
-//        return socket;
-//    }
-
-
     @Override
     public void run() {
         try {
             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-            while(true) {
+            while (true) {
                 String line = in.readLine();
                 System.out.println(line);
 
@@ -34,6 +29,7 @@ class Client extends Thread{
                     Socket clientSocket = client.socket;
                     PrintWriter out = new PrintWriter(clientSocket.getOutputStream());
                     out.println(line);
+                    System.out.println("test!!");
                     out.flush();
                 }
             }
@@ -41,6 +37,7 @@ class Client extends Thread{
             throw new RuntimeException(e);
         }
     }
+
 }
 
 public class ChatServer {
@@ -51,11 +48,11 @@ public class ChatServer {
 
         try {
             ServerSocket server = new ServerSocket(SERVER_PORT);
-            while(true) {
+            while (true) {
                 Socket socket = server.accept();
                 Client client = new Client(socket);
+                client.start();
                 clients.add(client);
-                clients.add(new Client(socket));
                 System.out.println(socket.getInetAddress());
             }
 

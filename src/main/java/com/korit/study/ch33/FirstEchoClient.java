@@ -11,35 +11,25 @@ public class FirstEchoClient {
         final String SERVER_ADDRESS = "localhost";
         final int SERVER_PORT = 5000;
 
-        /*
-        * 서버와 클라이언트 통신
-        * 단방향, 양방향
-        */
-
         try {
             Socket socket = new Socket(SERVER_ADDRESS, SERVER_PORT);
             System.out.println("서버 접속 완료");
 
-
             BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             PrintWriter writer = new PrintWriter(socket.getOutputStream());
-
 
             String message = "소켓 통신 전송 데이터입니다.";
             System.out.println(message);
             writer.println(message);
             writer.flush();
 
-
-            String responseMessage =  reader.readLine();
-            System.out.println("응답 데이터 : " + responseMessage);
-
+            String responseMessage = reader.readLine();
+            System.out.println("응답 데이터: " + responseMessage);
 
             reader.close();
             writer.close();
             socket.close();
             System.out.println("클라이언트 종료");
-
 
         } catch (IOException e) {
             throw new RuntimeException(e);
